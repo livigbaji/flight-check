@@ -1,0 +1,51 @@
+<div class="container">
+
+    <div class="container" style="margin-top: 100px; max-width: 500px">
+  
+            <div class="center-align">
+                    <h1>Login</h1>
+                </div>
+  
+  
+  
+            <div class="z-depth-4 card-panel" style="border-radius: 10px">
+  
+
+                <form (ngSubmit)="login()" [formGroup]="loginForm">
+                    <ng-container *ngIf="(error$ | async) as error">
+                        <blockquote>{{error}}</blockquote>
+                    </ng-container>
+                    <div class="row" >
+                        <blockquote>
+
+                        </blockquote>
+                    </div>
+
+                    <div class="row">
+                            <div class="input-field col s12">
+                            <i class="material-icons prefix">mail</i>
+                              <input type="email" formControlName="email" name="email" class="validate" required>
+                              <label >Email</label>
+                            </div>
+                        </div>
+        
+        
+                        <div class="row">
+                            <div class="input-field col s12">
+                              <i class="material-icons prefix">vpn_key</i>
+                              <input formControlName="password"  type="password" name="password" class="validate" minlength="6" maxlength="50" required>
+                              <label>Password</label>
+                            </div>
+                        </div>
+        
+                        <div class="row">
+                            <div class="center-align">
+                                <button class="btn" type="submit">Login</button>
+                            </div>
+                    </div>
+        
+                </form>
+    
+        </div>
+  </div>
+  </div>

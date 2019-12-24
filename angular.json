@@ -115,6 +115,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "opensky"
+    }
+  },
+  "defaultProject": "opensky",
+  "cli": {
+    "defaultCollection": "@datorama/akita"
+  }
 }
