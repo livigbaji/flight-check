@@ -3,9 +3,9 @@
 export interface Flight {
     id: number| string;
     icao24: string;
-    firstSeen: number;
+    firstSeen: number|string;
     estDepartureAirport: null| string;
-    lastSeen: number;
+    lastSeen: number| string;
     estArrivalAirport: string;
     callsign: string;
     estDepartureAirportHorizDistance: null| number;
