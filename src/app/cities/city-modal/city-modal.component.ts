@@ -19,7 +19,7 @@ export class CityModalComponent implements OnInit {
   numbers = {
     minutes: _.range(1, 61),
     hours: _.range(1, 24),
-    days: _.range(1, 31)
+    days: _.range(1, 8)
   };
 
   flightsForm: FormGroup = this.fb.group({

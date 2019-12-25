@@ -7,7 +7,7 @@ export const cities: City[] = [
         id: 1,
         airport: 'Hartsfield-Jackson Atlanta International Airport',
         name: 'Atlanta',
-        code: 'ATL',
+        code: 'KATL',
         passengers: 107394029,
         description: `Remaining in pole position, with an increase of 3.3 per cent on 2017,
         Atlanta may have been bypassed by Chicago O’Hare on aircraft movements, but on passenger numbers, it reigns supreme.
@@ -15,20 +15,25 @@ export const cities: City[] = [
         picture: 'https://d1t0xk6rn1avc6.cloudfront.net/wp-content/uploads/ATL.jpg'
     },{
         id: 2,
-        name: 'Beijing',
-        airport: 'Beijing Capital International Airport',
-        code: 'PEK',
+        name: 'Los Angeles',
+        airport: 'Los Angeles International Airport',
+        code: 'KLAX',
         description: `
-        Retaining its place at number two, Beijing has seen an increase of over 5 per cent since 2017,
-        but as Beijing Daxing nears completion, competition in the area is surely set to increase.
-        I wonder if we will see more than one Beijing-based airport this time next year?`,
+        Commonly known as LAX, Los Angeles International Airport is 16 miles (27km) to the southwest of LA city center,
+        and before September 11th 2001, it used to be the 3rd most busy airport in the world. LAX is also the airport
+        with more non-stop flights than any other airport. Los Angeles International Airport is one of the best places
+        for aircraft spotters to see commercial planes, especially from “Clutter’s Park” (also known as “Imperial Hill”),
+        located at the South, always full of press photographers and aviation enthusiasts.
+        Before being occupied by an airport, the land where the LAX is now used to be a Mexican Rancho.
+        During the 1920s, it started to attract many aviators who used a small portion of this property as a makeshift landing strip, 
+        but it wasn’t until 1928 when it officially became Los Angeles International Airport.`,
         passengers: 100983290,
         picture: 'https://d1t0xk6rn1avc6.cloudfront.net/wp-content/uploads/beijing-capital.jpg'
     },{
         id: 3,
-        name: 'Dubai',
-        airport: 'Dubai International Airport ',
-        code: 'DXB',
+        name: 'Toronto',
+        airport: 'Lester B. Pearson International Airport',
+        code: 'CYYZ',
         description: `
         Remaining in the bronze medal position, Dubai continues to grow as an airport.
         Having welcomed 900,000 passengers in 2018, the steady growth of DXB has seen a 1 per cent increase on 2017’s figures.
@@ -40,7 +45,7 @@ export const cities: City[] = [
         id: 4,
         name: 'London',
         airport: 'London Heathrow',
-        code: 'LHR',
+        code: 'EGGW',
         description: `
             Hedging into the top 10, Heathrow saw an increase of 2.7 per cent on 2017.
             Whilst the controversy continues around the expansion, and the construction of the third runway,
@@ -54,7 +59,7 @@ export const cities: City[] = [
         id: 5,
         name: 'Hong Kong',
         airport: 'Hong Kong International Airport',
-        code: 'HKA',
+        code: 'VHHH',
         description: `
             Seeing an increase of 2.6 per cent, the world’s largest terminal building has seen a 14.4 per cent decrease in air cargo,
             but quite the opposite in passenger traffic.
@@ -66,7 +71,7 @@ export const cities: City[] = [
         id: 6,
         name: 'Paris',
         airport: 'Paris Charles de Gaulle Airport',
-        code: 'CDG',
+        code: 'LFPG',
         description: `
             The automated baggage sorting system and conveyor to speed luggage delivery time for airlines operating within the hub,
             and the planned rail connection with CDG Express, all promote the addition of new links,
@@ -79,7 +84,7 @@ export const cities: City[] = [
         id: 7,
         name: 'Amsterdam',
         airport: 'Amsterdam Airport Schiphol',
-        code: 'AMS',
+        code: 'EHAM',
         description: `
         With the new pier terminal set to be finished this year (2019),
         the predominantly European flights using it will contribute to the 3.7 per centgrowth that AMS witnessed last year.
@@ -90,9 +95,9 @@ export const cities: City[] = [
         picture: 'https://d1t0xk6rn1avc6.cloudfront.net/wp-content/uploads/AMS.jpg'
     }, {
         id: 8,
-        name: 'Delhi',
-        airport: 'Indira Gandhi International Airport ',
-        code: 'DEL',
+        name: 'Seoul',
+        airport: 'Incheon International Airport',
+        code: 'RKSI',
         description: `
         With an increase of 10.2 per cent on 2017, the four-step progress that
         New Delhi Airport has made is incredible considering the airport
@@ -107,7 +112,7 @@ export const cities: City[] = [
         id: 9,
         name: 'Frankfurt',
         airport: 'Frankfurt Airport',
-        code: 'FRA',
+        code: 'EDDF',
         description: `
         New Terminal 3 is expected to accommodate up to 25 million passengers and will feature 75 new aircraft positions
         when completely constructed. Its first phase, consisting
@@ -118,9 +123,9 @@ export const cities: City[] = [
         passengers: 69510269
     }, {
         id: 10,
-        name: 'Istanbul',
-        airport: 'Istanbul Atatürk Airport',
-        code: 'IST',
+        name: 'Barcelonia',
+        airport: 'Barcelona International Airport',
+        code: 'LEBL',
         description: `
         The relocation from Atatürk to Istanbul New Airport is due to take place at the beginning of April.
          With a rate of growth of 6.4 per cent on 2017, will this change in airports within the same city bring
