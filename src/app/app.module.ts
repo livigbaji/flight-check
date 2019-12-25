@@ -20,6 +20,7 @@ import { CityFlightListComponent } from './cities/city-flight-list/city-flight-l
 
 import { TimeAgoPipe } from 'time-ago-pipe';
 import { StringPipe } from './pipes/string.pipe';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { StringPipe } from './pipes/string.pipe';
     CityModalComponent,
     CityFlightListComponent,
     TimeAgoPipe,
-    StringPipe
+    StringPipe,
+    AboutUsComponent
   ],
   imports: [
     BrowserModule,

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { LoginStore } from '../states/login/login.store';
 import { LoginQuery } from '../states/login/login.query';
 import { Login } from '../states/login/login.model';
-import { resetStores } from "@datorama/akita";
+import { resetStores } from '@datorama/akita';
 
 @Injectable({
   providedIn: 'root'

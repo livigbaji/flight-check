@@ -1,2 +1,16 @@
+<nav class="white">
+  <div class="nav-wrapper">
+    <a href="#" class="brand-logo black-text center">Open Sky Flights</a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <ng-container *ngIf="isLoggedIn$ | async; else notLoggedIn">
+        <li><a (click)="logout()" class="black-text">Logout</a></li>
+      </ng-container>
 
+      <ng-template #notLoggedIn>
+        <li routerLinkActive="active"><a routerLink="login" class="black-text">Login</a></li>
+      </ng-template>
+      <li routerLinkActive="active"><a routerLink="about-us" class="black-text">About Us</a></li>
+    </ul>
+  </div>
+</nav>
 <router-outlet></router-outlet>
