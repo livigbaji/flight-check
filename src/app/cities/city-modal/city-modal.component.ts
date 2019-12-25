@@ -14,6 +14,7 @@ export class CityModalComponent implements OnInit {
 
   @Input() city: City;
   @Input() flights: Flight[];
+  @Input() loading: boolean;
   @Output() flightParamsChanged: EventEmitter<any> = new EventEmitter<any>();
   numbers = {
     minutes: _.range(1, 61),
@@ -32,7 +33,7 @@ export class CityModalComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.flightsForm.valueChanges.subscribe(values => this.submit(values));
+
   }
 
   submit(value = null) {

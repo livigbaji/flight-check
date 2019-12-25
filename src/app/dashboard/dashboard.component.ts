@@ -26,6 +26,8 @@ export class DashboardComponent implements OnInit {
 
   flights$ = this.flightService.flights$;
 
+  flightsLoading$ = this.flightService.loading$;
+
   constructor(
     private cityService: CityService,
     private flightService: FlightService,

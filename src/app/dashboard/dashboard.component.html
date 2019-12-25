@@ -12,6 +12,7 @@
                     [city]="city" 
                     [flights]="flights$ | async"
                     (flightParamsChanged)="changeFlightParams($event)"
+                    [loading]="flightsLoading$ | async"
                 ></app-city-modal>
             </ng-container>
         </div>

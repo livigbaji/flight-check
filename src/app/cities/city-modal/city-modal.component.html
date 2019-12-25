@@ -3,7 +3,7 @@
 
 <div class="container">
     <div class="row" [formGroup]="flightsForm">
-        <div class="col s4 input-field">
+        <div class="col s3 input-field">
             <small>Arrival/Departure</small>
             <select materialize="FormSelect" formControlName="flightType">
                 <option value="arrival">Arrival</option>
@@ -28,19 +28,14 @@
                 >{{num}}</option>
             </select>
         </div>
+
+        <div class="col s1 input-field" style="padding-top: 30px">
+            <button class="btn" (click)="submit()">Submit</button>
+        </div>
     </div>
 
-    <ng-container *ngIf="flightsForm.touched; else fetchBtn">
-        <div class="row">
-            <app-city-flight-list [flights]="flights"></app-city-flight-list>
-        </div>
-    </ng-container>
+    <div class="row">
+        <app-city-flight-list [flights]="flights" [loading]="loading"></app-city-flight-list>
+    </div>
 
-    <ng-template #fetchBtn>
-        <div class="row">
-            <div class="center-align">
-                <button class="btn" (click)="submit()">Fetch Flights</button>
-            </div>
-        </div>
-    </ng-template>
 </div>
