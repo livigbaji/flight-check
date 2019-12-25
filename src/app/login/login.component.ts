@@ -33,10 +33,6 @@ export class LoginComponent implements OnInit {
     .subscribe(loginState => {
       if (loginState) {
         this.router.navigate(['/']);
-      } else {
-        M.toast({
-          html: 'please correct errors before resubmitting'
-        });
       }
     });
 

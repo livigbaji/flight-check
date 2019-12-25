@@ -2,8 +2,11 @@ import { Component, OnInit, EventEmitter } from '@angular/core';
 import { MaterializeAction } from '@samuelberthe/angular2-materialize';
 import { CityService } from '../services/city.service';
 import { FlightService } from '../services/flight.service';
+import { AuthService } from '../services/auth.service';
 import { tap } from 'rxjs/operators';
 import * as M from 'materialize-css';
+import { Router } from '@angular/router';
+import { from } from 'rxjs';
 
 @Component({
   selector: 'app-dashboard',
@@ -25,7 +28,9 @@ export class DashboardComponent implements OnInit {
 
   constructor(
     private cityService: CityService,
-    private flightService: FlightService
+    private flightService: FlightService,
+    private authService: AuthService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -44,5 +49,10 @@ export class DashboardComponent implements OnInit {
         M.toast({html: `An error occured please try again`});
       }
     });
+  }
+
+  logout() {
+    this.authService.logout();
+    this.router.navigate(['/', 'login']);
   }
 }

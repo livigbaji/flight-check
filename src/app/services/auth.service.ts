@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { LoginStore } from '../states/login/login.store';
 import { LoginQuery } from '../states/login/login.query';
 import { Login } from '../states/login/login.model';
+import { resetStores } from "@datorama/akita";
 
 @Injectable({
   providedIn: 'root'
@@ -27,13 +28,13 @@ export class AuthService {
       const errors = [
         ...[email !== 'demo' ? ['email'] : [] ],
         ...[password !== 'demo' ? ['password'] : [] ]
-      ];
+      ].filter(x => x && x.length);
       this.store.setError(`incorrect ${errors.join(' and ')}`);
     }
     return this.query.isLoggedIn$;
   }
 
   logout() {
-
+    resetStores();
   }
 }
