@@ -3,7 +3,7 @@
 
 <div class="container">
     <div class="row" [formGroup]="flightsForm">
-        <div class="col s6 input-field">
+        <div class="col s4 input-field">
             <small>Arrival/Departure</small>
             <select materialize="FormSelect" formControlName="flightType">
                 <option value="arrival">Arrival</option>
@@ -11,10 +11,21 @@
             </select>
         </div>
 
-        <div class="col s6 input-field">
-            <small>Minute Intervals</small>
+        <div class="col s4 input-field">
+            <small>Interval</small>
+            <select materialize="FormSelect" formControlName="intervalType">
+                <option value="minutes">Mintues</option>
+                <option value="hours">Hours</option>
+            </select>
+        </div>
+
+        <div class="col s4 input-field">
+            <small>{{flightsForm.get('intervalType').value}} Interval</small>
             <select materialize="FormSelect" formControlName="begin">
-                <option *ngFor="let num of numbers" [value]="num">{{num}}</option>
+                <option 
+                    *ngFor="let num of numbers[flightsForm.get('intervalType').value]" 
+                    [value]="num"
+                >{{num}}</option>
             </select>
         </div>
     </div>

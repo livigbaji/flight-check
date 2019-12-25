@@ -22,13 +22,12 @@ export class FlightService {
     private http: HttpClient
   ) { }
 
-  fetchData({airport, begin, flightType}) {
+  fetchData({airport, begin, flightType, intervalType}) {
     this.store.setLoading(true);
-    const now = moment();
     const queryString = (new URLSearchParams({
       airport,
-      begin: now.subtract(begin, 'minutes').unix(),
-      end: now.unix()
+      begin: Number(moment().subtract(begin, intervalType).format('X')),
+      end: moment().unix()
     } as any)).toString();
 
     return this.http.get(`https://opensky-network.org/api/flights/${flightType}?${queryString}`)

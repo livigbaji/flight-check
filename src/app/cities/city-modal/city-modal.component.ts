@@ -15,10 +15,15 @@ export class CityModalComponent implements OnInit {
   @Input() city: City;
   @Input() flights: Flight[];
   @Output() flightParamsChanged: EventEmitter<any> = new EventEmitter<any>();
-  numbers: number[] = _.range(1, 61);
+  numbers = {
+    minutes: _.range(1, 61),
+    hours: _.range(1, 24),
+    days: _.range(1, 31)
+  };
 
   flightsForm: FormGroup = this.fb.group({
     flightType: ['arrival', Validators.required],
+    intervalType: ['minutes', Validators.required],
     begin: [1, Validators.required]
   });
 
