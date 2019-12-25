@@ -1,0 +1,10 @@
+<div class="col s12 z-depth-5" style="border-radius: 30px">
+    <div class="center-align">
+        <div class="col s6" *ngFor="let city of cities$ | async">
+            <app-city-list-item 
+                [city]="city"
+                (citySelected) = "selectCity($event)"
+            ></app-city-list-item>
+        </div>
+    </div>
+</div>

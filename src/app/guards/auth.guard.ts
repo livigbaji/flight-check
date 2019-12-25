@@ -3,6 +3,7 @@ import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, Rout
 import { Observable } from 'rxjs';
 import { LoginQuery } from '../states/login/login.query';
 import { tap } from 'rxjs/operators';
+import { CityService } from '../services/city.service';
 
 
 @Injectable({
@@ -12,7 +13,8 @@ export class AuthGuard implements CanActivate {
 
   constructor(
     private loginQuery: LoginQuery,
-    private router: Router
+    private router: Router,
+    private cityService: CityService
   ) {
 
   }
@@ -24,6 +26,8 @@ export class AuthGuard implements CanActivate {
         tap(isLoggedIn => {
           if (!isLoggedIn) {
             this.router.navigate(['/', 'login']);
+          } else {
+            this.cityService.init();
           }
         })
       );

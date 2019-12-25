@@ -1,0 +1,22 @@
+<h4 class="center">{{city.name}}</h4>
+<h6 class="center">{{city.airport}} ({{city.code}})</h6>
+
+<div class="container">
+    <div class="row" [formGroup]="flightsForm">
+        <div class="col s6 input-field">
+            <small>Arrival/Departure</small>
+            <select materialize="FormSelect" formControlName="flightType">
+                <option value="arrivals">Arrival</option>
+                <option value="departure">Departures</option>
+            </select>
+        </div>
+
+        <div class="col s6 input-field">
+            <small>Minute Intervals</small>
+            <select materialize="FormSelect" formControlName="begin">
+                <option *ngFor="let num of numbers" [value]="num">{{num}}</option>
+            </select>
+        </div>
+
+    </div>
+</div>

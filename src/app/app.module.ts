@@ -13,6 +13,10 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import 'materialize-css';
 import { MaterializeModule } from '@samuelberthe/angular2-materialize';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { CityListComponent } from './cities/city-list/city-list.component';
+import { CityListItemComponent } from './cities/city-list-item/city-list-item.component';
+import { CityModalComponent } from './cities/city-modal/city-modal.component';
+import { CityFlightListComponent } from './cities/city-flight-list/city-flight-list.component';
 
 
 @NgModule({
@@ -20,7 +24,11 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     AppComponent,
     LoginComponent,
     DashboardComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    CityListComponent,
+    CityListItemComponent,
+    CityModalComponent,
+    CityFlightListComponent
   ],
   imports: [
     BrowserModule,
