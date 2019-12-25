@@ -4,7 +4,8 @@ import { HttpClient } from '@angular/common/http';
 import { Flight } from '../states/flights/flights.model';
 import { FlightsQuery } from '../states/flights/flights.query';
 import { FlightsStore } from '../states/flights/flights.store';
-import { finalize, map } from 'rxjs/operators';
+import { finalize, map, catchError } from 'rxjs/operators';
+import { of } from 'rxjs';
 
 
 @Injectable({
@@ -13,6 +14,7 @@ import { finalize, map } from 'rxjs/operators';
 export class FlightService {
 
   flights$ = this.query.selectAll();
+  loading$ = this.query.selectLoading();
 
   constructor(
     private query: FlightsQuery,
@@ -22,11 +24,11 @@ export class FlightService {
 
   fetchData({airport, begin, flightType}) {
     this.store.setLoading(true);
-    const now = moment.now();
+    const now = moment();
     const queryString = (new URLSearchParams({
       airport,
-      begin: now - (begin * 60),
-      end: now
+      begin: now.subtract(begin, 'minutes').unix(),
+      end: now.unix()
     } as any)).toString();
 
     return this.http.get(`https://opensky-network.org/api/flights/${flightType}?${queryString}`)
@@ -37,6 +39,9 @@ export class FlightService {
               }),
               finalize(() => {
                 this.store.setLoading(false);
+              }),
+              catchError(error => {
+                return of(false);
               })
             );
   }

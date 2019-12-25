@@ -3,6 +3,7 @@ import { MaterializeAction } from '@samuelberthe/angular2-materialize';
 import { CityService } from '../services/city.service';
 import { FlightService } from '../services/flight.service';
 import { tap } from 'rxjs/operators';
+import * as M from 'materialize-css';
 
 @Component({
   selector: 'app-dashboard',
@@ -15,7 +16,7 @@ export class DashboardComponent implements OnInit {
 
   city$ = this.cityService.activeCity$.pipe(
     tap(activeCity => {
-      // this.flightService.reset();
+      this.flightService.reset();
       this.modalActions.emit(activeCity ? 'open' : 'close');
     })
   );
@@ -32,12 +33,16 @@ export class DashboardComponent implements OnInit {
   }
 
 
-  closeModal(){
+  closeModal() {
     this.cityService.select(null);
   }
 
   changeFlightParams(params) {
-    console.log({params});
-    this.flightService.fetchData(params).subscribe(console.log);
+    this.flightService.fetchData(params)
+    .subscribe(response => {
+      if (!response) {
+        M.toast({html: `An error occured please try again`});
+      }
+    });
   }
 }

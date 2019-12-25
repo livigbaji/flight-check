@@ -3,7 +3,6 @@ import { City } from '../../states/cities/cities.model';
 import { Flight } from '../../states/flights/flights.model';
 import * as _ from 'lodash';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { tap } from 'rxjs/operators';
 
 
 @Component({
@@ -16,10 +15,10 @@ export class CityModalComponent implements OnInit {
   @Input() city: City;
   @Input() flights: Flight[];
   @Output() flightParamsChanged: EventEmitter<any> = new EventEmitter<any>();
-  numbers: number[] = _.range(1, 60);
+  numbers: number[] = _.range(1, 61);
 
   flightsForm: FormGroup = this.fb.group({
-    flightType: ['arrivals', Validators.required],
+    flightType: ['arrival', Validators.required],
     begin: [1, Validators.required]
   });
 
@@ -28,12 +27,14 @@ export class CityModalComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.flightsForm.valueChanges.subscribe( value => {
-        console.log({value});
-        this.flightParamsChanged.emit({
-          airport: this.city.code,
-          ...value
-        });
+    this.flightsForm.valueChanges.subscribe(values => this.submit(values));
+  }
+
+  submit(value = null) {
+    value = value || this.flightsForm.value;
+    this.flightParamsChanged.emit({
+      airport: this.city.code,
+      ...value
     });
   }
 

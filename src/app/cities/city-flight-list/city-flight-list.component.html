@@ -1,1 +1,33 @@
-<p>city-flight-list works!</p>
+<ng-container *ngIf="flights && flights.length; else flightsNotLoaded">
+    <ul class="collection">
+        <li class="collection-item" *ngFor="let flight of flights">
+            <div class="row">
+                <div class="col s6">
+                    <h6>FLIGHT ICAO</h6>
+                    <h5>{{flight.icao24}}</h5>
+                </div>
+                <div class="col s3">
+                    <h6>FIRST SEEN</h6>
+                    <h5>{{flight.firstSeen * 1000| timeAgo}}</h5>
+                </div>
+                <div class="col s3">
+                    <h6>LAST SEEN</h6>
+                    <h5>{{flight.lastSeen * 1000| timeAgo}}</h5>
+                </div>
+                <div class="col s4">
+                    <h6>CALL SIGN</h6>
+                    <h5>{{flight.callsign}}</h5>
+                </div>
+                <div class="col s8">
+
+                </div>
+            </div>
+        </li>
+    </ul>
+</ng-container>
+
+<ng-template #flightsNotLoaded>
+    <blockquote>
+        <h6>Could not load flights, please try again</h6>
+    </blockquote>
+</ng-template>

@@ -6,7 +6,7 @@
         <div class="col s6 input-field">
             <small>Arrival/Departure</small>
             <select materialize="FormSelect" formControlName="flightType">
-                <option value="arrivals">Arrival</option>
+                <option value="arrival">Arrival</option>
                 <option value="departure">Departures</option>
             </select>
         </div>
@@ -17,6 +17,19 @@
                 <option *ngFor="let num of numbers" [value]="num">{{num}}</option>
             </select>
         </div>
-
     </div>
+
+    <ng-container *ngIf="flightsForm.touched; else fetchBtn">
+        <div class="row">
+            <app-city-flight-list [flights]="flights"></app-city-flight-list>
+        </div>
+    </ng-container>
+
+    <ng-template #fetchBtn>
+        <div class="row">
+            <div class="center-align">
+                <button class="btn" (click)="submit()">Fetch Flights</button>
+            </div>
+        </div>
+    </ng-template>
 </div>

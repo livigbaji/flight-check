@@ -18,6 +18,8 @@ import { CityListItemComponent } from './cities/city-list-item/city-list-item.co
 import { CityModalComponent } from './cities/city-modal/city-modal.component';
 import { CityFlightListComponent } from './cities/city-flight-list/city-flight-list.component';
 
+import { TimeAgoPipe } from 'time-ago-pipe';
+
 
 @NgModule({
   declarations: [
@@ -28,7 +30,8 @@ import { CityFlightListComponent } from './cities/city-flight-list/city-flight-l
     CityListComponent,
     CityListItemComponent,
     CityModalComponent,
-    CityFlightListComponent
+    CityFlightListComponent,
+    TimeAgoPipe
   ],
   imports: [
     BrowserModule,

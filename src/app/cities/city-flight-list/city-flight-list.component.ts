@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+
 
 @Component({
   selector: 'app-city-flight-list',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./city-flight-list.component.css']
 })
 export class CityFlightListComponent implements OnInit {
+
+  @Input() flights;
 
   constructor() { }
 
