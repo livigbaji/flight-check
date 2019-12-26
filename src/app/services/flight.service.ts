@@ -23,6 +23,7 @@ export class FlightService {
   ) { }
 
   fetchData({airport, begin, flightType, intervalType}) {
+    this.store.set([]);
     this.store.setLoading(true);
     const queryString = (new URLSearchParams({
       airport,
@@ -33,7 +34,7 @@ export class FlightService {
     return this.http.get(`https://opensky-network.org/api/flights/${flightType}?${queryString}`)
             .pipe(
               map((data: Flight[] | null) => {
-                if (data) {  this.store.set(data); }
+                if (data) {  this.store.set(data.map((flight, index) => ({...flight, id: index + 1}) as Flight) ); }
                 return !!data;
               }),
               finalize(() => {

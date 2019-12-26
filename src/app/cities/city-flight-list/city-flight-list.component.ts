@@ -9,6 +9,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class CityFlightListComponent implements OnInit {
 
   @Input() flights;
+  @Input() code;
   @Input() loading: boolean;
 
   constructor() { }

@@ -11,7 +11,8 @@ export interface FlightsState extends EntityState<Flight>, ActiveState { }
 export class FlightsStore extends EntityStore<FlightsState> {
   constructor() {
     super({
-        active: null
+        active: null,
+        loading: false
     });
   }
 }

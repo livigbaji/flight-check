@@ -1,5 +1,14 @@
 <nav class="white">
   <div class="nav-wrapper">
+    <ng-container *ngIf="isLoggedIn$ | async">
+      <ul class="left">
+        <li class="sidenav-trigger" data-target="slide-out">
+        <a  class="black-text ">
+          <i class="material-icons">more_vert</i>
+        </a>
+      </li>
+      </ul>
+    </ng-container>
     <a routerLink="" class="brand-logo black-text center">Open Sky Flights</a>
     <ul id="nav-mobile" class="right hide-on-med-and-down">
       <ng-container *ngIf="isLoggedIn$ | async; else notLoggedIn">
@@ -18,3 +27,48 @@
   </div>
 </nav>
 <router-outlet></router-outlet>
+<footer class="page-footer docs-footer grey darken-3">
+
+
+
+
+
+ <div class="footer-copyright">
+      <div class="row">     
+          <p>
+              Cities with heavy air traffic (<a href="https://www.internationalairportreview.com/article/32311/top-20-largest-airports-world-passenger-number/" target="__blank">source</a>) | 
+              <a (click)="logout()" style="cursor: pointer;">Logout</a> |
+              Designed by Livinus Igbaji Oga-ifu
+          </p>
+      </div>
+  </div>
+</footer>
+
+
+<ng-container *ngIf="isLoggedIn$ | async">
+  <ul id="slide-out" class="sidenav" materialize="Sidenav">
+    <li ><a  routerlink="/" >
+      <i class="material-icons">airplanemode_active</i>
+      View Airports</a></li>
+    <li ><a  routerlink="/" >
+      <i class="material-icons">flight_land</i>
+      Top Flight
+    </a></li>
+    <li ><a  routerlink="/" >
+      <i class="material-icons">chrome_reader_mode</i>
+      Breaking News</a>
+    </li>
+    <li ><a  routerlink="/" >
+      <i class="material-icons">notification_important</i>
+      Flight Reminder
+    </a></li>
+    <li ><a  routerlink="/" >
+      <i class="material-icons">list_alt</i>
+      My Records
+    </a></li>
+    <li ><a  routerlink="/" >
+      <i class="material-icons">person</i>
+      Personal Records
+    </a></li>
+  </ul>
+</ng-container>

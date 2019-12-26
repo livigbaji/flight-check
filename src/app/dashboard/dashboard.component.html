@@ -1,38 +1,37 @@
-<div class="row">
-    <ul id="slide-out" class="sidenav sidenav-fixed">
-        <li><a routerLink="/">View Airports</a></li>
-        <li><a routerLink="/">Top Flight</a></li>
-        <li><a routerLink="/">Breaking News</a></li>
-        <li><a routerLink="/">Flight Reminder</a></li>
-        <li><a routerLink="/">My Records</a></li>
-        <li><a routerLink="/">Personal Records</a></li>
-    </ul>
-    <div class="container" style="margin-top: 20px; padding-left: 310px">
-        <app-city-list></app-city-list>
 
-        <!--view modal-->
-        <div id="modal3" class="modal" materialize="Modal" [materializeActions]="modalActions">
-            <a (click)="closeModal()" class="modal-close waves-effect waves-light btn-flat right">
-                <i class="material-icons">cancel</i>
-            </a>
-            <ng-container *ngIf="(city$ | async) as city">
-                <app-city-modal 
-                    [city]="city" 
-                    [flights]="flights$ | async"
-                    (flightParamsChanged)="changeFlightParams($event)"
-                    [loading]="flightsLoading$ | async"
-                ></app-city-modal>
-            </ng-container>
+<main>
+    <!--  Parallax Section  -->
+      <div class="parallax-container" >
+        <div class="parallax" materialize="Parallax"><img src="/assets/atlanta-airport.jpg" style="transform: translate3d(-50%, 280.984px, 0px); opacity: 1;"></div>
+      </div>
+      <div class="section white">
+        <div class="row" style="padding-right: 50px; padding-left: 50px">
+          
+          
+                
+                    <app-city-list></app-city-list>
+            
+                    <!--view modal-->
+                    <div id="modal3" class="modal" materialize="Modal" [materializeActions]="modalActions">
+                        <a (click)="closeModal()" class="modal-close waves-effect waves-light btn-flat right">
+                            <i class="material-icons">cancel</i>
+                        </a>
+                        <ng-container *ngIf="(city$ | async) as city">
+                            <app-city-modal 
+                                [city]="city" 
+                                [flights]="flights$ | async"
+                                (flightParamsChanged)="changeFlightParams($event)"
+                                [loading]="flightsLoading$ | async"
+                            ></app-city-modal>
+                        </ng-container>
+                    </div>
+                    <!--view Modal-->
         </div>
-        <!--view Modal-->
-    </div>
-</div>
-<div class="row" style="padding-left: 310px">
-    <div class="center-align">
-        <p>
-            Cities with heavy air traffic (<a href="https://www.internationalairportreview.com/article/32311/top-20-largest-airports-world-passenger-number/" target="__blank">source</a>)| 
-            <a (click)="logout()" style="cursor: pointer;">Logout</a> |
-            Designed by Livinus Igbaji Oga-ifu
-        </p>
-    </div>
-</div>
+      </div>
+      <div class="parallax-container" >
+        <div class="parallax" materialize="Parallax"><img src="/assets/newyork-airport.jpg" style="opacity: 1; transform: translate3d(-50%, 5.10933px, 0px);"></div>
+      </div>
+    
+      
+      <!--  Scripts-->
+    </main>

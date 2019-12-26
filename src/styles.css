@@ -1,2 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~materialize-css/dist/css/materialize.css";
+
+.bl {
+    border-left: 1px solid black;
+}

@@ -36,7 +36,11 @@
     </div>
 
     <div class="row">
-        <app-city-flight-list [flights]="flights" [loading]="loading"></app-city-flight-list>
+        <app-city-flight-list 
+            [flights]="flights" 
+            [loading]="loading"
+            [code]="city.code"
+        ></app-city-flight-list>
     </div>
 
 </div>
