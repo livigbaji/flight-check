@@ -26,7 +26,7 @@
     "@angular/router": "~8.1.1",
     "@datorama/akita": "^4.17.1",
     "@samuelberthe/angular2-materialize": "^1.0.0-rc.2.2",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "hammerjs": "^2.0.8",
     "jquery": "^3.4.1",
     "lodash": "^4.17.15",
